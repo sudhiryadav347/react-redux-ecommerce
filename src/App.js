@@ -1,24 +1,41 @@
-import logo from './logo.svg';
+import React, { useState } from "react";
 import './App.css';
+import { Row, Container } from "react-bootstrap";
+import Logo from "./Components/UI/Logo";
+import Navigationbar from "./Components/UI/NavigationBar";
+import { Route, Routes } from "react-router-dom";
+import Home from "./Components/Home";
+import About from "./Components/About";
+import Pagenotfound from "./Components/Pagenotfound";
+import HeaderCounter from "./Components/HeaderCounter/HeaderCounter";
+import Cart from "./Components/Cart/Cart";
+
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <>
+      <header className='App-header'>
+        <Container className='p-3'>
+          <Row>
+            <Logo />
+            <HeaderCounter />
+            <Cart />
+          </Row>
+        </Container>
       </header>
-    </div>
+      <Navigationbar />
+      <Container className='pt-4'>
+      <Routes>
+					<Route path='about' element={<About />} />
+					<Route
+						path='/'
+						element={<Home />}
+					/>
+					<Route path='*' element={<Pagenotfound />} />
+				</Routes>
+      </Container>
+    </>
   );
 }
 
