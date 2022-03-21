@@ -1,11 +1,11 @@
 import React from "react";
 import { Col, Nav } from "react-bootstrap";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { uiActions } from "../../store/ui-slice";
 import styles from "./HeaderCounter.module.css";
 
 export default function HeaderCounter(props) {
-	const numberOfCartItems = 2;
+	const numberOfCartItems = useSelector((state) => state.cart.totalQuantity);
 	const dispatch = useDispatch();
 	
 	const displayCartHandler = () => {

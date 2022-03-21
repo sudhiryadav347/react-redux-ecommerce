@@ -23,9 +23,12 @@ const Home = (props) => {
 			{
 				// Using array.map to iterate through product data.
 				ProductData.map((product, index) => {
-					const onAddToCartHandler = (Quantity) => {
-						
-					};
+					const productData = {
+						itemID: product.id,
+						image: product.image,
+						price: product.price,
+						name: product.title
+					}
 					return (
 						<Col key={index}>
 							<Card>
@@ -43,7 +46,7 @@ const Home = (props) => {
 									</Card.Text>
 									Rate: {product.rating.rate}
 									<Rate value={product.rating.rate} />
-									<AddtocartForm onAddToCart={onAddToCartHandler} />
+									<AddtocartForm data={productData}/>
 								</Card.Body>
 							</Card>
 						</Col>
