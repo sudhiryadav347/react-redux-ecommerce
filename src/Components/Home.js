@@ -24,7 +24,7 @@ const Home = (props) => {
 				// Using array.map to iterate through product data.
 				ProductData.map((product, index) => {
 					const productData = {
-						itemID: product.id,
+						id: product.id,
 						image: product.image,
 						price: product.price,
 						name: product.title

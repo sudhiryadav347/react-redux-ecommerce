@@ -10,7 +10,6 @@ import Pagenotfound from "./Components/Pagenotfound";
 import HeaderCounter from "./Components/HeaderCounter/HeaderCounter";
 import Cart from "./Components/Cart/Cart";
 
-
 function App() {
 
   return (
@@ -20,7 +19,7 @@ function App() {
           <Row>
             <Logo />
             <HeaderCounter />
-            <Cart />
+           <Cart />
           </Row>
         </Container>
       </header>

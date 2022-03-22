@@ -40,7 +40,6 @@ const AddtocartForm = (props) => {
 
 		setisValidQTY(true);
 		dispatch(cartActions.addItemToCart(itemData));
-
 	};
 
 	return (
